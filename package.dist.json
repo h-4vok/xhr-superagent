@@ -1,0 +1,22 @@
+{
+  "name": "xhr-superagent",
+  "version": "5.1.0",
+  "scripts": {},
+  "description": "Update your metadata in the package.json before publishing!",
+  "main": "dist/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/h-4vok/xhr-superagent.git"
+  },
+  "keywords": ["xhr", "api", "fetch", "superagent", "axios"],
+  "author": "Christian Guzmán",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/h-4vok/xhr-superagent/issues"
+  },
+  "homepage": "https://github.com/h-4vok/xhr-superagent#readme",
+  "dependencies": {
+    "superagent": "^5.1.0",
+    "xhr-bridge": "^1.0.3"
+  }
+}

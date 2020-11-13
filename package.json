@@ -2,7 +2,8 @@
   "name": "xhr-superagent",
   "version": "5.1.0",
   "scripts": {
-    "prepublish": "npm run all-checks && npm run code-coverage && npm run build",
+    "bundle:prepare": "npm run all-checks && npm run code-coverage && npm run build",
+    "bundle:finish": "copy \"package.dist.json\" \"dist/package.json\" && copy \"LICENSE\" \"dist/LICENSE\" && copy \"README.md\" \"dist/README.md\"",
     "build": "npx babel src --out-dir dist",
     "copy-package-json": "cp package.json dist",
     "watch": "npx babel src --watch --out-dir dist",
@@ -23,7 +24,7 @@
   ],
   "husky": {
     "hooks": {
-      "pre-commit": ""
+      "pre-commit": "npm run all-checks"
     }
   },
   "repository": {

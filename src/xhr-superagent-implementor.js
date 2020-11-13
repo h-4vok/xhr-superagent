@@ -1,7 +1,13 @@
 import { XhrImplementor, HttpVerbs } from 'xhr-bridge';
 import superagent from 'superagent';
 
+const fakeResponseImplementor = { handleResponse: () => {} };
+
 export default class XhrSuperagentImplementor extends XhrImplementor {
+  constructor(responseImplementor) {
+    super(responseImplementor || fakeResponseImplementor);
+  }
+
   handlers = {
     [HttpVerbs.get]: this.get,
     [HttpVerbs.post]: this.post,
@@ -11,7 +17,7 @@ export default class XhrSuperagentImplementor extends XhrImplementor {
   };
 
   execute(req) {
-    super(req);
+    super.execute(req);
 
     const closure = this.handlers[req.verb];
     if (!closure) {
